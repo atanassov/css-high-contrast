@@ -73,6 +73,8 @@ Detecting the high contrast color mode: the 'high-contrast' feature</h3>
 	allowing the user to switch between the three levels of independently of the ambient light level,
 	as high contrast or low contrast styles may be more suitable for users with visual disabilities.
 
+    Issue: The naming of 'high-contrast' comes from the Windows theming feature and is up for debate. 
+
 <h2 id='hc-override'>
 High Contrast Override</h2>
 
