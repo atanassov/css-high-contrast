@@ -26,8 +26,13 @@ through color contrast. Individuals with low vision may find it more comfortable
 content when there is a strong contrast between foreground and background colors. High 
 contrast is a useful feature in increasing the readability of screen-based text for such users.
 
-<h2 id='mf-environment'>
-High Contrast Media Query</h2>
+<h2 id='nc-mediaquery'>
+Media Query</h2>
+In order to allow developer defined high contrast rules for webpages, a high contrast media query 
+type would be added called high-contrast. This CSS media query type is currently supported by 
+Microsoft Edge and IE. If a high-contrast media query evaluates to true, any styles defined within 
+that media query will be used when in high contrast and will not be overridden by the high contrast 
+feature.
 
 <h3 id="high-contrast">
 Detecting the high contrast color mode: the 'high-contrast' feature</h3>
@@ -64,11 +69,40 @@ Detecting the high contrast color mode: the 'high-contrast' feature</h3>
 	User agents should set the thresholds between the three levels
 	in a way that takes into account the characteristics of the device.
 
-
-
 	For accessibility purposes, user agents may offer manual controls
 	allowing the user to switch between the three levels of independently of the ambient light level,
 	as high contrast or low contrast styles may be more suitable for users with visual disabilities.
+
+<h2 id='hc-override'>
+High Contrast Override</h2>
+
+    Note: This is a note about env() variables.
+
+<h3 id="high-contrast-override">
+Overriding the high contrast color mode: the 'high-contrast-override' property</h3>
+
+	<pre class='propdef'>
+	Name: high-contrast-override
+	Value: none | auto
+	Initial: auto
+	Applies to: all element
+	Inherited: no
+	Computed value: specified keyword
+	Animation type: not animatable
+	</pre>
+
+    <dl dfn-for="high-contrast-override" dfn-type=value>
+		<dt><dfn>auto</dfn>
+		<dd>
+			Indicates the applicable CSS properties will be adjusted as expected when the system is in high contrast mode.
+
+		<dt><dfn>none</dfn>
+		<dd>
+			Indicates the applicable CSS properties will not be adjusted when the system is in high contrast mode.
+	</dl>
+
+<h2 id='hc-cascade'>
+Cascade Order</h2>
 
 
 <h2 class="no-num" id="acknowledgments">
