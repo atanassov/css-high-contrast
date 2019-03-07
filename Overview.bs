@@ -1,0 +1,110 @@
+<pre class='metadata'>
+Title: CSS High Contrast
+Group: csswg
+Shortname: high-contrast
+Level: 1
+Status: UD
+Status Text: Once complete, this specification will include and extend <cite>Media Queries Level&nbsp;4.</cite> [[MEDIAQUERIES-4]]
+Work Status: Exploring
+ED:
+TR:
+Previous Version:
+Editor: Rossen Atanassov, Microsoft, ratan@microsoft.com, w3cid 49885
+Editor: Melanie Richards, Microsoft, mrichards@microsoft.com
+Abstract: <a>High Contrast</a> allow authors to detect and participate in high contrast mode chnages.
+Ignored Terms: min-resolution, max-resolution, none, view-mode, mediaText, DOMString
+</pre>
+
+<pre class=link-defaults>
+spec:css-values-3; type:value; text:in
+</pre>
+
+<h2 id="intro">
+Introduction</h2>
+
+
+<h2 id='mf-environment'>
+Environment Media Features</h2>
+
+<h3 id="high-contrast">
+Detecting the high contrast color mode: the 'high-contrast' feature</h3>
+
+	<pre class='descdef mq'>
+	Name: high-contrast
+	Value: active | black-on-white | white-on-black
+	For: @media
+	Type: discrete
+	</pre>
+
+	The 'high-contrast' media feature is used to query about the presence of high contrast color mode in which 
+    the device is used, to allow the author to adjust style of the document in response.
+	The following values are valid:
+
+	<dl dfn-type=value dfn-for="@media/high-contrast">
+		<dt><dfn>active</dfn>
+		<dd>
+			The device is used in a high contrast environment,
+			where color mode is used to improve the contrast between foregrounds and backrounds.
+
+		<dt><dfn>black-on-white</dfn>
+		<dd>
+			The device is used in a environment with a light level in the ideal range for the screen,
+			and which does not necessitate any particular adjustment.
+
+		<dt><dfn>white-on-black</dfn>
+		<dd>
+			The device is used in an exceptionally bright environment,
+			causing the screen to be washed out and difficult to read.
+			For example: bright daylight.
+	</dl>
+
+	User agents should set the thresholds between the three levels
+	in a way that takes into account the characteristics of the device.
+
+
+
+	For accessibility purposes, user agents may offer manual controls
+	allowing the user to switch between the three levels of independently of the ambient light level,
+	as high contrast or low contrast styles may be more suitable for users with visual disabilities.
+
+<h3 id="prefers-color-scheme">
+Detecting the desire for increased or decreased color contrast from elements on the page: the 'prefers-color-scheme' feature</h3>
+
+	<pre class='descdef mq'>
+	Name: prefers-color-scheme
+	Value: no-preference | light | dark
+	For: @media
+	Type: discrete
+	</pre>
+
+	The 'prefers-color-scheme' media feature is used to detect if the user
+	has requested the system use a light or dark color theme.
+
+	<dl dfn-type=value dfn-for="@media/prefers-color-scheme">
+		<dt><dfn>no-preference</dfn>
+		<dd>
+			Indicates that the user has made no preference known
+			to the system. This keyword value evaluates as false
+			in the <a>boolean context</a>.
+
+		<dt><dfn>light</dfn>
+		<dd>
+			Indicates that user has notified the system that they
+			prefer an interface that has a light theme.
+
+		<dt><dfn>dark</dfn>
+		<dd>
+			Indicates that user has notified the system that they
+			prefer an interface that has a dark theme.
+
+	</dl>
+
+	Issue: Should we include 'forced-light' and 'forced-dark' values? We don't necessarily want the
+	page to try to undo what the system might be enforcing.
+
+
+<h2 class="no-num" id="acknowledgments">
+Acknowledgments</h2>
+
+This specification is the product of the W3C Working Group on
+Cascading Style Sheets.
