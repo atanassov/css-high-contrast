@@ -11,7 +11,7 @@ TR:
 Previous Version:
 Editor: Rossen Atanassov, Microsoft, ratan@microsoft.com, w3cid 49885
 Editor: Melanie Richards, Microsoft, mrichards@microsoft.com
-Abstract: <a>High Contrast</a> allow authors to detect and participate in high contrast mode chnages.
+Abstract: <a>High Contrast</a> allow authors to detect and participate in high contrast mode changes.
 Ignored Terms: high contrast
 </pre>
 
@@ -21,10 +21,13 @@ spec:css-values-3; type:value; text:in
 
 <h2 id="intro">
 Introduction</h2>
-High contrast is an accessibility feature intended to increase the readability of text 
-through color contrast. Individuals with low vision may find it more comfortable to read 
-content when there is a strong contrast between foreground and background colors. High 
-contrast is a useful feature in increasing the readability of screen-based text for such users.
+High contrast is an accessibility feature intended to increase the readability of text while 
+reducing cognitive load. The OS platform feature works by enabling the user to select theme colors 
+for a scoped number of semantic elements. This scheme can then be applied to user interfaces (UI) 
+and app content, reducing the visual complexity of the UI while guaranteeing the user's preferred 
+color contrast. Many people may find it more comfortable to read digital text consistently tailored 
+to their theme. To honor this strong user preference, this color mode is typically automatically 
+applied to web content.
 
 <h2 id='nc-mediaquery'>
 Media Query</h2>
