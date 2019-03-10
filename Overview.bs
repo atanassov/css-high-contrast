@@ -21,20 +21,22 @@ spec:css-values-3; type:value; text:in
 
 <h2 id="intro">
 Introduction</h2>
-High contrast is an accessibility feature intended to increase the readability of text while 
-reducing cognitive load. The OS platform feature works by enabling the user to select theme colors 
-for a scoped number of semantic elements. This scheme can then be applied to user interfaces (UI) 
-and app content, reducing the visual complexity of the UI while guaranteeing the user's preferred 
-contrast level. Many people may find it more comfortable to read digital text consistently tailored 
-to their theme. To honor this strong user preference, this color mode is typically automatically 
-applied to web content.
+
+	High contrast is an accessibility feature intended to increase the readability of text while 
+	reducing cognitive load. The OS platform feature works by enabling the user to select theme colors 
+	for a scoped number of semantic elements. This scheme can then be applied to user interfaces (UI) 
+	and app content, reducing the visual complexity of the UI while guaranteeing the user's preferred 
+	contrast level. Many people may find it more comfortable to read digital text consistently tailored 
+	to their theme. To honor this strong user preference, this color mode is typically automatically 
+	applied to web content.
 
 <h2 id='nc-mediaquery'>
 Media Query</h2>
-To allow developers to make style adjustments when high contrast styles are applied, a media query 
-type called `high-contrast` would be added. If a high-contrast media query evaluates to true, any 
-styles defined within that media query will be used when in high contrast, and will not be overridden 
-by the high contrast feature.
+
+	To allow developers to make style adjustments when high contrast styles are applied, a media query 
+	type called `high-contrast` would be added. If a high-contrast media query evaluates to true, any 
+	styles defined within that media query will be used when in high contrast, and will not be overridden 
+	by the high contrast feature.
 
 <h3 id="high-contrast">
 Detecting the high contrast color mode: the 'high-contrast' feature</h3>
@@ -110,10 +112,10 @@ Detecting the high contrast color mode: the 'high-contrast' feature</h3>
 <h2 id='hc-adjust'>
 High Contrast Adjust</h2>
 
-In some cases, it may be appropriate to override high contrast styles applied by the user agent: for 
-example if the color is important to consuming the content, or the author wishes to apply high contrast 
-colors in a manner different to the user agent stylesheet. A `high-contrast-adjust` property would 
-enable the author to prevent the high contrast mode from adjusting styles.
+	In some cases, it may be appropriate to override high contrast styles applied by the user agent: for 
+	example if the color is important to consuming the content, or the author wishes to apply high contrast 
+	colors in a manner different to the user agent stylesheet. A `high-contrast-adjust` property would 
+	enable the author to prevent the high contrast mode from adjusting styles.
 
 <h3 id="high-contrast-adjust">
 Overriding the high contrast color mode: the 'high-contrast-adjust' property</h3>
@@ -181,25 +183,23 @@ Overriding the high contrast color mode: the 'high-contrast-adjust' property</h3
 <h2 id='hc-cascade'>
 Cascade Order</h2>
 
-High contrast color schemes work by overriding user defined webpage styles for various 
-CSS properties in order to ensure readability. The process model for these high contrast overrides is 
-as follows:
+	High contrast color schemes work by overriding user defined webpage styles for various 
+	CSS properties in order to ensure readability. The process model for these high contrast overrides is 
+	as follows:
 
-Given an element and a declaration from a CSS rule whose selector matches that element, the application 
-of that declaration will be suppressed if all of the following conditions are met:
+	Given an element and a declaration from a CSS rule whose selector matches that element, the application 
+	of that declaration will be suppressed if all of the following conditions are met:
 
-1. The declaration is for a CSS property in the set of properties that are adjusted for high contrast 
-(as defined by the user agent style sheet)
-2. High contrast mode is enabled in the host environment
-3. The computed value of `high-contrast-adjust` on the element or its ancestor is `auto`
-4. The rule is not contained (directly or indirectly) inside an `@media` block matching the `high-contrast` 
-media feature
-5. The rule is not defined in the default user agent style sheet
+	1. The declaration is for a CSS property in the set of properties that are adjusted for high contrast (as defined by the user agent style sheet)
+	2. High contrast mode is enabled in the host environment
+	3. The computed value of `high-contrast-adjust` on the element or its ancestor is `auto`
+	4. The rule is not contained (directly or indirectly) inside an `@media` block matching the `high-contrast` media feature
+	5. The rule is not defined in the default user agent style sheet
 
-If all of the above conditions are met, the computed color value of the CSS property is overridden by 
-a system color value.
+	If all of the above conditions are met, the computed color value of the CSS property is overridden by 
+	a system color value.
 
 <h2 class="no-num" id="acknowledgments">
 Acknowledgments</h2>
 
-This specification is the product of the W3C Working Group on Cascading Style Sheets.
+	This specification is the product of the W3C Working Group on Cascading Style Sheets.
