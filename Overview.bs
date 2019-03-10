@@ -181,9 +181,25 @@ Overriding the high contrast color mode: the 'high-contrast-adjust' property</h3
 <h2 id='hc-cascade'>
 Cascade Order</h2>
 
+High contrast color schemes work by overriding user defined webpage styles for various 
+CSS properties in order to ensure readability. The process model for these high contrast overrides is 
+as follows:
+
+Given an element and a declaration from a CSS rule whose selector matches that element, the application 
+of that declaration will be suppressed if all of the following conditions are met:
+
+1. The declaration is for a CSS property in the set of properties that are adjusted for high contrast 
+(as defined by the user agent style sheet)
+2. High contrast mode is enabled in the host environment
+3. The computed value of `high-contrast-adjust` on the element or its ancestor is `auto`
+4. The rule is not contained (directly or indirectly) inside an `@media` block matching the `high-contrast` 
+media feature
+5. The rule is not defined in the default user agent style sheet
+
+If all of the above conditions are met, the computed color value of the CSS property is overridden by 
+a system color value.
 
 <h2 class="no-num" id="acknowledgments">
 Acknowledgments</h2>
 
-This specification is the product of the W3C Working Group on
-Cascading Style Sheets.
+This specification is the product of the W3C Working Group on Cascading Style Sheets.
