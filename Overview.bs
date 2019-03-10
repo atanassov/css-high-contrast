@@ -11,7 +11,7 @@ TR:
 Previous Version:
 Editor: Rossen Atanassov, Microsoft, ratan@microsoft.com, w3cid 49885
 Editor: Melanie Richards, Microsoft, mrichards@microsoft.com
-Abstract: <a>High Contrast</a> allow authors to detect and participate in high contrast mode changes.
+Abstract: <a>High Contrast</a> allows authors to detect and participate in high contrast mode changes.
 Ignored Terms: high contrast
 </pre>
 
@@ -34,7 +34,7 @@ Introduction</h2>
 Media Query</h2>
 
 	To allow developers to make style adjustments when high contrast styles are applied, a media query 
-	type called `high-contrast` would be added. If a high-contrast media query evaluates to true, any 
+	type called <code>high-contrast</code> would be added. If a high-contrast media query evaluates to true, any 
 	styles defined within that media query will be used when in high contrast, and will not be overridden 
 	by the high contrast feature.
 
@@ -48,7 +48,7 @@ Detecting the high contrast color mode: the 'high-contrast' feature</h3>
 	Type: discrete
 	</pre>
 
-	The `high-contrast` media feature is used to query about the presence of the high contrast color 
+	The <code>high-contrast</code> media feature is used to query about the presence of the high contrast color 
 	mode on the system, to allow the author to adjust style of the document in response. The following 
 	values are valid:
 
@@ -105,16 +105,17 @@ Detecting the high contrast color mode: the 'high-contrast' feature</h3>
 		</pre>
 	</div>
 
-  Issue: The naming of `high-contrast` comes from the Windows theming feature, and a more general 
-	name can be considered (e.g. `user-color-mode`) to provide for future color modes. In such a case, 
-	a general `high-contrast` value keyword may be added to distinguish from activation of *any* color mode.
+  Issue: The naming of <code>high-contrast</code> comes from the Windows theming feature, and a more general 
+	name can be considered (e.g. <code>user-color-mode</code>) to provide for future color modes. In such a case, 
+	a general <code>high-contrast</code> value keyword may be added to distinguish from activation of 
+	<strong>any</strong> color mode.
 
 <h2 id='hc-adjust'>
 High Contrast Adjust</h2>
 
 	In some cases, it may be appropriate to override high contrast styles applied by the user agent: for 
 	example if the color is important to consuming the content, or the author wishes to apply high contrast 
-	colors in a manner different to the user agent stylesheet. A `high-contrast-adjust` property would 
+	colors in a manner different to the user agent stylesheet. A <code>high-contrast-adjust</code> property would 
 	enable the author to prevent the high contrast mode from adjusting styles.
 
 <h3 id="high-contrast-adjust">
@@ -178,7 +179,7 @@ Overriding the high contrast color mode: the 'high-contrast-adjust' property</h3
 	</div>
 
 	Note: this example uses CSS System Colors to set content to abstracted user colors. This could be 
-	alternatively achieved by extending the available environment variables accessed via `env()`.
+	alternatively achieved by extending the available environment variables accessed via <code>env()</code>.
 
 <h2 id='hc-cascade'>
 Cascade Order</h2>
@@ -192,8 +193,8 @@ Cascade Order</h2>
 
 	1. The declaration is for a CSS property in the set of properties that are adjusted for high contrast (as defined by the user agent style sheet)
 	2. High contrast mode is enabled in the host environment
-	3. The computed value of `high-contrast-adjust` on the element or its ancestor is `auto`
-	4. The rule is not contained (directly or indirectly) inside an `@media` block matching the `high-contrast` media feature
+	3. The computed value of <code>high-contrast-adjust</code> on the element or its ancestor is <code>auto</code>
+	4. The rule is not contained (directly or indirectly) inside an <code>@media</code> block matching the <code>high-contrast</code> media feature
 	5. The rule is not defined in the default user agent style sheet
 
 	If all of the above conditions are met, the computed color value of the CSS property is overridden by 
