@@ -47,8 +47,8 @@ Detecting the high contrast color mode: the 'high-contrast' feature</h3>
 	</pre>
 
 	The `high-contrast` media feature is used to query about the presence of the high contrast color 
-	mode in which content is viewed, to allow the author to adjust style of the document in response.
-	The following values are valid:
+	mode on the system, to allow the author to adjust style of the document in response. The following 
+	values are valid:
 
 	<dl dfn-type=value dfn-for="@media/high-contrast">
 		<dt><dfn>active</dfn></dt>
@@ -107,33 +107,76 @@ Detecting the high contrast color mode: the 'high-contrast' feature</h3>
 	name can be considered (e.g. `user-color-mode`) to provide for future color modes. In such a case, 
 	a general `high-contrast` value keyword may be added to distinguish from activation of *any* color mode.
 
-<h2 id='hc-override'>
-High Contrast Override</h2>
+<h2 id='hc-adjust'>
+High Contrast Adjust</h2>
 
-    Note: This is a note about env() variables.
+In some cases, it may be appropriate to override high contrast styles applied by the user agent: for 
+example if the color is important to consuming the content, or the author wishes to apply high contrast 
+colors in a manner different to the user agent stylesheet. A `high-contrast-adjust` property would 
+enable the author to prevent the high contrast mode from adjusting styles.
 
-<h3 id="high-contrast-override">
-Overriding the high contrast color mode: the 'high-contrast-override' property</h3>
+<h3 id="high-contrast-adjust">
+Overriding the high contrast color mode: the 'high-contrast-adjust' property</h3>
 
 	<pre class='propdef'>
 	Name: high-contrast-override
-	Value: none | auto
+	Value: auto | none
 	Initial: auto
-	Applies to: all element
+	Applies to: all elements
 	Inherited: no
 	Computed value: specified keyword
 	Animation type: not animatable
 	</pre>
 
-    <dl dfn-for="high-contrast-override" dfn-type=value>
-		<dt><dfn>auto</dfn>
+  <dl dfn-for="high-contrast-override" dfn-type=value>
+		<dt><dfn>auto</dfn></dt>
 		<dd>
-			Indicates the applicable CSS properties will be adjusted as expected when the system is in high contrast mode.
-
+			Indicates the applicable CSS properties will be adjusted as expected when the system is in high 
+			contrast mode.
+		</dd>
 		<dt><dfn>none</dfn>
 		<dd>
-			Indicates the applicable CSS properties will not be adjusted when the system is in high contrast mode.
+			Indicates the applicable CSS properties will not be adjusted when the system is in high contrast 
+			mode. Applies to the given element and its subtree.
+		</dd>
 	</dl>
+
+	<div class="example">
+		<pre class="lang-css">
+			/**
+			* Author preserves brand colors in a style guide
+			*/
+			@media (high-contrast: active) {
+				.color-swatch {
+					high-contrast-adjust: none;
+				}
+			}
+		</pre>
+	</div>
+
+	<div class="example">
+		<pre class="lang-css">
+			/**
+			* Author wishes to style popular highlights in an article, which may contain links
+			*/
+			@media (high-contrast: active) {
+				.highlight {
+					high-contrast-adjust: none;
+					color: Window;
+					background: WindowText;
+				}
+
+				.highlight a:link,
+				.highlight a:visited {
+					border-bottom: 2px solid;
+					color: Window;
+				}
+			}
+		</pre>
+	</div>
+
+	Note: this example uses CSS System Colors to set content to abstracted user colors. This could be 
+	alternatively achieved by extending the available environment variables accessed via `env()`.
 
 <h2 id='hc-cascade'>
 Cascade Order</h2>
