@@ -121,7 +121,7 @@ High Contrast Adjust</h2>
 Overriding the high contrast color mode: the 'high-contrast-adjust' property</h3>
 
 	<pre class='propdef'>
-	Name: high-contrast-override
+	Name: high-contrast-adjust
 	Value: auto | none
 	Initial: auto
 	Applies to: all elements
