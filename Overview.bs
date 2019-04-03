@@ -115,7 +115,7 @@ High Contrast Adjust</h2>
 
 	In some cases, it may be appropriate to override high contrast styles applied by the user agent: for 
 	example if the color is important to consuming the content, or the author wishes to apply high contrast 
-	colors in a manner different to the user agent stylesheet. A <code>high-contrast-adjust</code> property would 
+	colors in a manner different to the user agent stylesheet. A 'high-contrast-adjust' property would 
 	enable the author to prevent the high contrast mode from adjusting styles.
 
 <h3 id="high-contrast-adjust">
@@ -178,22 +178,23 @@ Overriding the high contrast color mode: the 'high-contrast-adjust' property</h3
 		</pre>
 	</div>
 
-	Note: this example uses CSS System Colors to set content to abstracted user colors. This could be 
+	Note: The example uses CSS System Colors to set content to abstracted user colors. This could be 
 	alternatively achieved by extending the available environment variables accessed via <code>env()</code>.
 
 <h2 id='hc-cascade'>
 Cascade Order</h2>
 
-	High contrast color schemes work by overriding user defined webpage styles for various 
-	CSS properties in order to ensure readability. The process model for these high contrast overrides is 
+	High contrast color schemes work by overriding user defined styles for various 
+	CSS properties in order to ensure readability. The process model for such high contrast overrides is 
 	as follows:
 
 	Given an element and a declaration from a CSS rule whose selector matches that element, the application 
 	of that declaration will be suppressed if all of the following conditions are met:
 
-	1. The declaration is for a CSS property in the set of properties that are adjusted for high contrast (as defined by the user agent style sheet)
+	1. The declaration is for a CSS property in the set of properties that are adjusted for high contrast 
+	(as defined by the user agent style sheet)
 	2. High contrast mode is enabled in the host environment
-	3. The computed value of <code>high-contrast-adjust</code> on the element or its ancestor is <code>auto</code>
+	3. The computed value of 'high-contrast-adjust' on the element or its ancestor is <code>auto</code>
 	4. The rule is not contained (directly or indirectly) inside an <code>@media</code> block matching the 'high-contrast' media feature
 	5. The rule is not defined in the default user agent style sheet
 
