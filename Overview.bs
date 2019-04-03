@@ -34,7 +34,7 @@ Introduction</h2>
 Media Query</h2>
 
 	To allow developers to make style adjustments when high contrast styles are applied, a media query 
-	type called <code>high-contrast</code> would be added. If a high-contrast media query evaluates to true, any 
+	type called 'high-contrast' would be added. If a high-contrast media query evaluates to true, any 
 	styles defined within that media query will be used when in high contrast, and will not be overridden 
 	by the high contrast feature.
 
@@ -48,7 +48,7 @@ Detecting the high contrast color mode: the 'high-contrast' feature</h3>
 	Type: discrete
 	</pre>
 
-	The <code>high-contrast</code> media feature is used to query about the presence of the high contrast color 
+	The 'high-contrast' media feature is used to query about the presence of the high contrast color 
 	mode on the system, to allow the author to adjust style of the document in response. The following 
 	values are valid:
 
@@ -105,9 +105,9 @@ Detecting the high contrast color mode: the 'high-contrast' feature</h3>
 		</pre>
 	</div>
 
-  Issue: The naming of <code>high-contrast</code> comes from the Windows theming feature, and a more general 
+  Issue: The naming of 'high-contrast' comes from the Windows theming feature, and a more general 
 	name can be considered (e.g. <code>user-color-mode</code>) to provide for future color modes. In such a case, 
-	a general <code>high-contrast</code> value keyword may be added to distinguish from activation of 
+	a general 'high-contrast' value keyword may be added to distinguish from activation of 
 	<strong>any</strong> color mode.
 
 <h2 id='hc-adjust'>
@@ -194,7 +194,7 @@ Cascade Order</h2>
 	1. The declaration is for a CSS property in the set of properties that are adjusted for high contrast (as defined by the user agent style sheet)
 	2. High contrast mode is enabled in the host environment
 	3. The computed value of <code>high-contrast-adjust</code> on the element or its ancestor is <code>auto</code>
-	4. The rule is not contained (directly or indirectly) inside an <code>@media</code> block matching the <code>high-contrast</code> media feature
+	4. The rule is not contained (directly or indirectly) inside an <code>@media</code> block matching the 'high-contrast' media feature
 	5. The rule is not defined in the default user agent style sheet
 
 	If all of the above conditions are met, the computed color value of the CSS property is overridden by 
